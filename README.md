@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + Convex + Better Auth Starter
+
+This project is a **fullstack starter kit** built with [Next.js](https://nextjs.org), [Convex](https://convex.dev), [Better Auth](https://www.better-auth.com), [shadcn/ui](https://ui.shadcn.com), and [Tailwind CSS](https://tailwindcss.com).
+
+It comes preconfigured with:
+
+- 🔑 **Authentication** using **Better Auth**
+  - Social login providers
+  - Passkeys support
+- ⚡ **Database & APIs** powered by **Convex**
+- 🎨 Pre-styled UI with **shadcn/ui** + **Tailwind CSS**
+- 🚀 Built on **Next.js App Router** for modern fullstack workflows
+
+---
+
+## Features
+
+- ✅ Email + Password auth (Better Auth)
+- ✅ Social logins (Google, GitHub, etc.)
+- ✅ Passkeys for passwordless login
+- ✅ Session management integrated with Convex
+- ✅ Prebuilt UI components with shadcn
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Run dev servers
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm run dev
+# and
+pnpm dlx convex dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Documentation & References
 
-## Learn More
+- [Convex Official Docs](https://docs.convex.dev)
+- [Better Auth Convex Integration Guide](https://www.better-auth.com/docs/integrations/convex)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [shadcn/ui](https://ui.shadcn.com)
+- [Tailwind CSS](https://tailwindcss.com)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+For Convex backend, follow [Convex deployment guide](https://docs.convex.dev/production/deployment).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License. Free to use and modify.
