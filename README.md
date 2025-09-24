@@ -18,6 +18,7 @@ It comes preconfigured with:
 - ✅ Email + Password auth (Better Auth)
 - ✅ Social logins (Google, GitHub, etc.)
 - ✅ Passkeys for passwordless login
+- ✅ Local Install for additional full control over your Better Auth schema
 - ✅ Session management integrated with Convex
 - ✅ Prebuilt UI components with shadcn
 

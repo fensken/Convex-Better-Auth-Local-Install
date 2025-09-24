@@ -5,12 +5,21 @@ import { DataModel } from "./_generated/dataModel";
 import { query } from "./_generated/server";
 import { betterAuth } from "better-auth";
 import { passkey } from "better-auth/plugins/passkey";
+import { username } from "better-auth/plugins/username";
+import authSchema from "./betterAuth/schema";
 
 const siteUrl = process.env.SITE_URL!;
 
 // The component client has methods needed for integrating Convex with Better Auth,
 // as well as helper methods for general use.
-export const authComponent = createClient<DataModel>(components.betterAuth);
+export const authComponent = createClient<DataModel, typeof authSchema>(
+  components.betterAuth,
+  {
+    local: {
+      schema: authSchema,
+    },
+  }
+);
 
 export const createAuth = (
   ctx: GenericCtx<DataModel>,
@@ -24,15 +33,38 @@ export const createAuth = (
     },
     baseURL: siteUrl,
     database: authComponent.adapter(ctx),
-    // Configure simple, non-verified email/password to get started
-    // emailAndPassword: {
-    //   enabled: true,
-    //   requireEmailVerification: false,
-    // },
+    user: {
+      // Add any additional fields to the user model here
+      additionalFields: {
+        bio: {
+          type: "string",
+          required: false,
+        },
+        about: {
+          type: "string",
+          required: false,
+        },
+        isPrivate: {
+          type: "boolean",
+          required: false,
+          defaultValue: false,
+        },
+        isImageStorage: {
+          type: "boolean",
+          required: false,
+          defaultValue: false,
+        },
+        badges: {
+          type: "string[]",
+          required: false,
+        },
+      },
+    },
     plugins: [
       // The Convex plugin is required for Convex compatibility
       convex(),
       passkey(),
+      username(),
     ],
     socialProviders: {
       google: {

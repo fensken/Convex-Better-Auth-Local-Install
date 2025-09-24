@@ -9,6 +9,9 @@
  */
 
 import type * as auth from "../auth.js";
+import type * as betterAuth_adaptor from "../betterAuth/adaptor.js";
+import type * as betterAuth_auth from "../betterAuth/auth.js";
+import type * as betterAuth_generatedSchema from "../betterAuth/generatedSchema.js";
 import type * as http from "../http.js";
 import type * as users from "../users.js";
 
@@ -28,6 +31,9 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   auth: typeof auth;
+  "betterAuth/adaptor": typeof betterAuth_adaptor;
+  "betterAuth/auth": typeof betterAuth_auth;
+  "betterAuth/generatedSchema": typeof betterAuth_generatedSchema;
   http: typeof http;
   users: typeof users;
 }>;
