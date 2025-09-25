@@ -8,7 +8,7 @@
  * @module
  */
 
-import type * as adaptor from "../adaptor.js";
+import type * as adapter from "../adapter.js";
 import type * as auth from "../auth.js";
 import type * as generatedSchema from "../generatedSchema.js";
 
@@ -27,12 +27,12 @@ import type {
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  adaptor: typeof adaptor;
+  adapter: typeof adapter;
   auth: typeof auth;
   generatedSchema: typeof generatedSchema;
 }>;
 export type Mounts = {
-  adaptor: {
+  adapter: {
     create: FunctionReference<
       "mutation",
       "public",
