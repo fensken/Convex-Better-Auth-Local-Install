@@ -33,6 +33,12 @@ export const createAuth = (
     },
     baseURL: siteUrl,
     database: authComponent.adapter(ctx),
+    plugins: [
+      // The Convex plugin is required for Convex compatibility
+      convex(),
+      passkey(),
+      username(),
+    ],
     user: {
       // Add any additional fields to the user model here
       additionalFields: {
@@ -48,24 +54,16 @@ export const createAuth = (
           type: "boolean",
           required: false,
           defaultValue: false,
+          input: false,
         },
         isImageStorage: {
           type: "boolean",
           required: false,
           defaultValue: false,
-        },
-        badges: {
-          type: "string[]",
-          required: false,
+          input: false,
         },
       },
     },
-    plugins: [
-      // The Convex plugin is required for Convex compatibility
-      convex(),
-      passkey(),
-      username(),
-    ],
     socialProviders: {
       google: {
         clientId: process.env.GOOGLE_CLIENT_ID as string,

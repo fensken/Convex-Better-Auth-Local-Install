@@ -20,9 +20,8 @@ export const tables = {
     about: v.optional(v.union(v.null(), v.string())),
     isPrivate: v.optional(v.union(v.null(), v.boolean())),
     isImageStorage: v.optional(v.union(v.null(), v.boolean())),
-    badges: v.optional(v.union(v.null(), v.array(v.string()))),
   })
-    .index("email_name", ["email","name"])
+    .index("email_name", ["email", "name"])
     .index("name", ["name"])
     .index("userId", ["userId"])
     .index("username", ["username"]),
@@ -36,7 +35,7 @@ export const tables = {
     userId: v.string(),
   })
     .index("expiresAt", ["expiresAt"])
-    .index("expiresAt_userId", ["expiresAt","userId"])
+    .index("expiresAt_userId", ["expiresAt", "userId"])
     .index("token", ["token"])
     .index("userId", ["userId"]),
   account: defineTable({
@@ -54,8 +53,8 @@ export const tables = {
     updatedAt: v.number(),
   })
     .index("accountId", ["accountId"])
-    .index("accountId_providerId", ["accountId","providerId"])
-    .index("providerId_userId", ["providerId","userId"])
+    .index("accountId_providerId", ["accountId", "providerId"])
+    .index("providerId_userId", ["providerId", "userId"])
     .index("userId", ["userId"]),
   verification: defineTable({
     identifier: v.string(),

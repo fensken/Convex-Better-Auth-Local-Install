@@ -21,7 +21,6 @@ export default function SignIn() {
         provider: "google",
         callbackURL: "/",
       },
-
       {
         onRequest: () => {
           // do something
